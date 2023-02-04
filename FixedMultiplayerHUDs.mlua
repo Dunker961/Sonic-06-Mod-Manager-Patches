@@ -1,17 +1,12 @@
 --[Patch]--
 Title("Fixed Multiplayer HUDs")
 Author("Hyper & Nonami")
-Platform("Xbox 360")
+Platform("All Systems")
 Blurb("Fixes bad HUD positioning and missing elements for multiplayer.")
 
 --[Functions]--
+All Systems:
 DecryptExecutable()
-
---Player 2 tag display
-WriteByte(Executable|0x39FC2|0x31)
-
---Player 2 battle display
-WriteByte(Executable|0x39FF5|0x31)
 
 BeginBlock("win32\archives\sprite.arc")
 
@@ -27,3 +22,18 @@ WriteByte("win32\sprite\tagdisplay_1p.xncp"|0x6B0|0x00)
 WriteByte("win32\sprite\tagdisplay_1p.xncp"|0xC10C|0x00)
 
 EndBlock("win32\archives\sprite.arc")
+
+Xbox 360:
+--Player 2 tag display
+WriteByte(Executable|0x39FC2|0x31)
+
+--Player 2 battle display
+WriteByte(Executable|0x39FF5|0x31)
+
+PlayStation 3:
+--Player 2 tag display
+WriteByte(Executable|0x171F7B2|0x31)
+
+--Player 2 battle display
+WriteByte(Executable|0x171F7E5|0x31)
+EncryptExecutable()
