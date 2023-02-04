@@ -1,10 +1,16 @@
 --[Patch]--
 Title("Antigravity Retains Momentum")
 Author("Hyper")
-Platform("Xbox 360")
+Platform("All Systems")
 Blurb("Makes Antigravity retain the last speed the player was moving at.")
 
 --[Functions]--
+Xbox 360:
 DecryptExecutable()
 WriteVirtualNop(0x82217968)
 WriteVirtualNop(0x82217970)
+
+PlayStation 3:
+DecryptExecutable()
+WriteVirtualNop(0x2D07F8)
+WriteVirtualNop(0x2D07F0)
