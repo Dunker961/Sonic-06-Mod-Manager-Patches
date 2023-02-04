@@ -1,11 +1,12 @@
 --[Patch]--
 Title("Y Button Light Dash")
-Author("Desko")
-Platform("Xbox 360")
+Author("Desko & Dunker")
+Platform("All Systems")
 Blurb("Remaps the Light Dash to the Y button.")
 Description("Remaps the Light Dash to the Y button like in Unleashed onwards.")
 
 --[Functions]--
+Xbox 360:
 DecryptExecutable()
 
 --Sonic fall state
@@ -42,3 +43,43 @@ WriteByte(Executable|0x1A8F5E|0x8F)
 WriteByte(Executable|0x1A926E|0x8F)
 --Shadow homing after state
 WriteByte(Executable|0x1A9792|0x8F)
+
+PlayStation 3:
+DecryptExecutable()
+
+--Sonic fall state
+WriteVirtualBytes(0x2D142C|"54 63 04 20")
+--Sonic jump state
+WriteVirtualBytes(0x2D1668|"54 63 04 20")
+--Sonic widespring state
+WriteVirtualBytes(0x2D1A20|"54 63 04 20")
+--Sonic/Princess homing after state
+WriteVirtualBytes(0x2D2208|"54 63 04 20")
+--Sonic bound state
+WriteVirtualBytes(0x2D24EC|"54 63 04 20")
+--Sonic wait state
+WriteVirtualBytes(0x2D3930|"54 63 04 20")
+--Sonic walk state
+WriteVirtualBytes(0x2D3DBC|"54 63 04 20")
+--Sonic run state
+WriteVirtualBytes(0x2D426C|"54 63 04 20")
+
+--Fast Sonic run state
+WriteVirtualBytes(0x2BEF4C|"54 63 04 20")
+
+--Shadow wait state
+WriteVirtualBytes(0x10A1EC|"54 63 04 20")
+--Shadow walk state
+WriteVirtualBytes(0x10A404|"54 63 04 20")
+--Shadow run state
+WriteVirtualBytes(0x10A634|"54 63 04 20")
+--Shadow fall state
+WriteVirtualBytes(0x10A864|"54 63 04 20")
+--Shadow jump state
+WriteVirtualBytes(0x10A9A4|"54 63 04 20")
+--Shadow widespring state
+WriteVirtualBytes(0x10AC60|"54 63 04 20")
+--Shadow homing after state
+WriteVirtualBytes(0x10B3A8|"54 63 04 20")
+
+EncryptExecutable()
