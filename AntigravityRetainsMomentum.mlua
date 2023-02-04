@@ -14,3 +14,4 @@ PlayStation 3:
 DecryptExecutable()
 WriteVirtualNop(0x2D07F8)
 WriteVirtualNop(0x2D07F0)
+EncryptExecutable()
