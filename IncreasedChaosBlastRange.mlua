@@ -1,18 +1,28 @@
 --[Patch]--
 Title("Increased Chaos Blast Range")
-Author("Nonami & VolcanoTheBat")
-Platform("Xbox 360")
+Author("Nonami, VolcanoTheBat & Dunker")
+Platform("All Systems")
 Blurb("Increases the range of Chaos Blast.")
 
 --[Functions]--
-DecryptExecutable()
-WriteByte(Executable|0x1A9F94|0x40)
-WriteBytes(Executable|0x256551|"40 82 01")
-WriteBytes(Executable|0x256561|"0A 6F 3C")
-
+All Systems:
 BeginBlock("core\archives\particle.arc")
 WriteBytes("core\effect\player\shadow\sh_chaos_blast00.mab"|0x934|"42 C8")
 WriteBytes("core\effect\player\shadow\sh_chaos_blast00.mab"|0x98C|"43 16")
 WriteBytes("core\effect\player\shadow\sh_chaos_blast00.mab"|0x990|"43 16")
 WriteBytes("core\effect\player\shadow\sh_chaos_blast00.mab"|0xE70|"3E 99 99 9A 3E 99 99 9A 3E 99 99 9A")
 EndBlock("core\archives\particle.arc")
+
+Xbox 360:
+DecryptExecutable()
+WriteByte(Executable|0x1A9F94|0x40)
+WriteBytes(Executable|0x256551|"40 82 01")
+WriteBytes(Executable|0x256561|"0A 6F 3C")
+
+PlayStation 3:
+DecryptExecutable()
+--beq -> bne
+--WriteVirtualBytes(0xF6490|"40 9E FF 74") It doesn't affect the game ?? What's the purpose of this in the first place?
+--.float 2500.0 | 0x1699550 (r2) - 0x169CBD0
+WriteVirtualBytes(0x3227F6|"36 80")
+EncryptExecutable()
