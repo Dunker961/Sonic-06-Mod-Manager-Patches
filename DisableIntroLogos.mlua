@@ -1,12 +1,21 @@
 --[Patch]--
 Title("Disable Intro Logos")
 Author("Knuxfan24")
-Platform("Xbox 360")
+Platform("All Systems")
 Blurb("Disables the SEGA, Sonic Team and CriWare logos on launch.")
 Description("This patch will disable the logos that display when the game launches.")
 
 --[Functions]--
+Xbox 360:
 DecryptExecutable()
 WriteNullBytes(Executable|0x36600|20)
 WriteNullBytes(Executable|0x36624|26)
 WriteNullBytes(Executable|0x36654|17)
+
+--Port by Dunker
+PlayStation 3:
+DecryptExecutable()
+WriteNullBytes(Executable|0x170F980|11)
+WriteNullBytes(Executable|0x170F9B0|1A)
+WriteNullBytes(Executable|0x170F9E0|14)
+EncryptExecutable()

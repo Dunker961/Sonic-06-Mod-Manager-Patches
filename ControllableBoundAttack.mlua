@@ -1,6 +1,6 @@
 --[Patch]--
 Title("Controllable Bound Attack")
-Author("Desko & Dunker")
+Author("Desko")
 Platform("All Systems")
 Blurb("Allows Sonic to move whilst performing the Bound Attack.")
 Description("This patch will allow Sonic to move whilst performing the Bound Attack.\n\nUnlock Mid-air Momentum patch would be recommended to use alongside this.")
@@ -12,6 +12,7 @@ WriteNopPPC(Executable|0x21AEE0)
 WriteNopPPC(Executable|0x21AF1C)
 WriteByte(Executable|0x21ADC8|0x40)
 
+--Port by Dunker
 PlayStation 3:
 DecryptExecutable()
 WriteVirtualNop(0x2D2544)

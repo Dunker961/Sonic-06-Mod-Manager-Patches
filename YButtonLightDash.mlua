@@ -1,6 +1,6 @@
 --[Patch]--
 Title("Y Button Light Dash")
-Author("Desko & Dunker")
+Author("Desko")
 Platform("All Systems")
 Blurb("Remaps the Light Dash to the Y button.")
 Description("Remaps the Light Dash to the Y button like in Unleashed onwards.")
@@ -44,6 +44,7 @@ WriteByte(Executable|0x1A926E|0x8F)
 --Shadow homing after state
 WriteByte(Executable|0x1A9792|0x8F)
 
+--Port by Dunker
 PlayStation 3:
 DecryptExecutable()
 

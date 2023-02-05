@@ -15,6 +15,7 @@ Xbox 360:
 DecryptExecutable()
 WriteByte(Executable|0x21379F|0x12)
 
+--Port by Dunker
 PlayStation 3:
 DecryptExecutable()
 WriteVirtualBytes(0x2BCD10|"2F 80 00 12")

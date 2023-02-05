@@ -1,10 +1,11 @@
 --[Patch]--
 Title("Restore Contextual HUD Colours")
 Author("Dunker, Reimous, Hyper & Chara")
-Platform("Xbox 360")
+Platform("All Systems")
 Blurb("Changes the HUD colours to match the character's episode theme.")
 
 --[Functions]--
+Xbox 360:
 DecryptExecutable()
 
 --Jump from life bar initialiser to custom function
@@ -35,3 +36,9 @@ WriteBytes(Executable|0x39BF4|"40 00 00 00")
 
 --Blaze the Cat
 WriteBytes(Executable|0x39C04|"40 00 00 00")
+
+PlayStation 3:
+DecryptExecutable()
+--Hud Color Table
+WriteBytes(Executable|0x171F980|"00 00 00 00 3F 80 00 00 40 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 3F 80 00 00 3F 80 00 00 40 00 00 00 00 00 00 00")
+EncryptExecutable()

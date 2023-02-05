@@ -10,8 +10,8 @@ DecryptExecutable()
 WriteVirtualNop(0x82217968)
 WriteVirtualNop(0x82217970)
 
+--Port by Dunker
 PlayStation 3:
 DecryptExecutable()
 WriteVirtualNop(0x2D07F8)
 WriteVirtualNop(0x2D07F0)
-EncryptExecutable()
